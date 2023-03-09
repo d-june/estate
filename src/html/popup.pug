@@ -1,0 +1,22 @@
+.popup#application(aria-hidden="true")
+	.popup__wrapper 
+		.popup__content 
+			button.popup__close(data-close, type="button") 
+			.popup__body
+				h2.popup__title Демо-версия
+				.popup__text Заполни форму и наши менеджеры свяжутся с тобой
+				form.popup__form.form-popup
+					ul.form-popup__list 
+						li.form-popup__item 
+							label.form-popup__label(for="name") Имя*:
+							input.form-popup__input(type="text", id="mail", placeholder="Иван")
+						li.form-popup__item 
+							label.form-popup__label(for="mail") Электронная почта*:
+							input.form-popup__input(type="email", id="mail", placeholder="ivan@mail.com")
+						li.form-popup__item 
+							label.form-popup__label(for="phone") Телефон*:
+							input.form-popup__input(type="tel", id="phone", placeholder="+38 000 000 00 00")
+						li.form-popup_item 
+							input.form-popup__submit.btn.btn-2(type="submit" data-popup="#callback", value="Отправить")
+
+

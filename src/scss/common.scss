@@ -1,0 +1,8 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.subtitle {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 36, 25);
+	line-height: 120%;
+	color: $greyColor;
+}

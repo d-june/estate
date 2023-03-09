@@ -1,0 +1,146 @@
+//====================================================================================================
+.header {
+	&._header-scroll {
+		position: fixed;
+		background-color: #ffffffb4;
+		z-index: 20;
+		width: 100%;
+	}
+	&._header-show {
+		background-color: #ffffff;
+		transition: background-color 0.3s ease 0s;
+		top: 0;
+	}
+	&__container {
+		position: relative;
+
+	}
+	&__body {
+		padding: rem(15) rem(0);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__logo {
+
+	}
+	&__menu {
+
+	}
+	
+}
+
+.menu {
+	&__icon {
+
+	}
+	&__body {
+		transition: left 0.3s ease 0s;
+		@media (max-width: $mobile) {
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100vh;
+			background-color: rgba(16, 16, 16, 0.8);
+			display: flex;
+			justify-content: flex-end;
+			padding: rem(60) rem(0);
+			color: $whiteColor1;
+		}
+
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			font-size: rem(25);
+			text-transform: uppercase;
+			line-height: 250%;
+		}
+	}
+	&__item {
+
+	}
+	&__link {
+		padding: rem(5) rem(15);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.menu-open {
+	transition: left 0.3s ease 0s;
+	.menu__body {
+		opacity: 1;
+		visibility: visible;
+		left: 0;
+		transition: left 0.3s ease 0s;
+		z-index: 10;
+	}
+	.icon-menu {
+		span,
+		&::before,
+		&::after {
+		background-color: #ffffff;
+		}
+	}
+}
+
+//====================================================================================================
+
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 15;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+

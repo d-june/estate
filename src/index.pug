@@ -1,0 +1,234 @@
+mixin product(link, img, title, address, beds, bathrooms, rooms)   
+	article.house
+		a.house__body(href= link)
+			.house__image-ibg
+				img.house__picture(src= img)
+			.house__content 
+				.house__title= title
+				.house__address= address
+				.house__tags 
+					.house__tag 
+						.house__icon._icon-bed
+						.house__text= beds
+					.house__tag 
+						.house__icon._icon-bathroom
+						.house__text= bathrooms
+					.house__tag 
+						.house__icon._icon-door
+						.house__text= rooms
+
+
+html
+	head
+		link(rel="stylesheet" href='css/style.min.css')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+	body
+		wrapper.wrapper
+			include html/header
+			main.main
+				section.main__banner.banner-main 
+					.banner-main__image-ibg
+						img.banner-main__picture(src="@img/main-image.jpg")
+					.banner-main__body 
+						.banner-main__logo 
+							img.banner-main__img(src="@img/logo-big.png")
+						.banner-main__text We're here to help you find a new home.
+						button.banner-main__button._icon-arrow-down(type="button", data-goto=".main__goal", data-goto-speed="800", data-goto-top="130")
+				section.main__goal.goal-main
+					.goal-main__container._container 
+						.goal-main__column 
+							h2.goal-main__title Our goal
+							.goal-main__subtitle.subtitle We are dedicated to finding a house that you'll love.
+						.goal-main__column 
+							p.goal-main__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+							p.goal-main__text Interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+							.goal-main__person
+								.goal-main__avatar-ibg-contain
+									img.goal-main__image(src="@img/avatars/1.png", alt="Аватар")
+								.goal-main__name Ava Orn
+								.goal-main__position Managing Broker
+				section.main__requirements.requirements-main
+					.requirements-main__container._container 
+						h2.requirements-main__title Our requirements
+						.requirements-main__subtitle.subtitle How we choose our listings.
+						.requirements-main__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus.
+						.requirements-main__content 
+							.requirements-main__image-ibg
+								img.requirements-main__picture(src="@img/requirements/1.jpg", alt="Картинка")
+							.requirements-main__body
+								.requirements-main__item.item-requirements-main
+									.item-requirements-main__icon._icon-location 
+									.item-requirements-main__title Stellar locations
+									.item-requirements-main__text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								.requirements-main__item.item-requirements-main
+									.item-requirements-main__icon._icon-builds
+									.item-requirements-main__title High quality builds
+									.item-requirements-main__text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								.requirements-main__item.item-requirements-main
+									.item-requirements-main__icon._icon-chair
+									.item-requirements-main__title Expert interior design
+									.item-requirements-main__text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				.main__image-ibg
+					img.main__picture(src="@img/home.jpg", alt="Дом")
+				section.main__listings.listings-main
+					.listings-main__container._container 
+						.listings-main__top 
+							h2.listings-main__title Current listings
+							.listings-main__subtitle.subtitle What we have in store for you.
+							.listings-main__text Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.
+						.listings-main__houses
+							+product("404.html", "img/houses/1.jpg", "House", "California St.", "16 beds", "2 bathrooms", "11 rooms") 
+							+product("404.html", "img/houses/2.jpg", "Villa", "Welford Gardens", "12 beds", "3 bathrooms", "16 rooms") 
+							+product("404.html", "img/houses/3.jpg", "House", "The Grove", "12 beds", "2 bathrooms", "14 rooms") 
+							+product("404.html", "img/houses/4.jpg", "Apartment", "Wallace St.", "10 beds", "2 bathrooms", "8 rooms") 
+							+product("404.html", "img/houses/5.jpg", "Apartment", "Dwight Way", "8 beds", "1 bathrooms", "6 rooms") 
+							+product("404.html", "img/houses/6.jpg", "House", "North Avenue", "14 beds", "3 bathrooms", "11 rooms") 
+						a.listings-main__show._icon-arrow-forward(href="404.html") Show all listings
+				section.main__team.team-main
+					.team-main__container._container
+						.team-main__main
+							h2.team-main__title Our people
+							.team-main__subtitle.subtitle Meet our team of dedicated and talented agents.
+							.team-main__text Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.
+							a.team-main__all._icon-arrow-forward(href="404.html") View our team
+						.team-main__column
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/1.png", alt="Аватар")
+								.team-main__name Ava Orn
+								.team-main__position Managing Broker
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/2.png", alt="Аватар")
+								.team-main__name Ella Hessel
+								.team-main__position Agent
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/3.png", alt="Аватар")
+								.team-main__name Daryl Gislason
+								.team-main__position REALTOR
+						.team-main__column
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/4.png", alt="Аватар")
+								.team-main__name David Sporer
+								.team-main__position Agent
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/5.png", alt="Аватар")
+								.team-main__name Trevor Torphy
+								.team-main__position Agent
+							.team-main__person
+								.team-main__avatar-ibg-contain
+									img.team-main__image(src="@img/avatars/6.png", alt="Аватар")
+								.team-main__name Amanda Giovanni
+								.team-main__position REALTOR
+				section.main__newsroom.newsroom-main
+					.newsroom-main__container._container 
+						h2.newsroom-main__title Newsroom
+						.newsroom-main__subtitle.subtitle Writing from Estate.
+						.newsroom-main__body 
+							a.newsroom-main__item.item-newsroom-main(href="404.html")
+								.item-newsroom-main__image-ibg
+									img.item-newsroom-main__picture(src="@img/newsroom/1.jpg", alt="Картинка")
+								.item-newsroom-main__content 
+									.item-newsroom-main__title Press release
+									.item-newsroom-main__subtitle.subtitle Market watch: are condos still a good investment?
+									.item-newsroom-main__date August 12, 2021
+							a.newsroom-main__item.item-newsroom-main(href="404.html")
+								.item-newsroom-main__image-ibg
+									img.item-newsroom-main__picture(src="@img/newsroom/2.jpg", alt="Картинка")
+								.item-newsroom-main__content 
+									.item-newsroom-main__title Announcement
+									.item-newsroom-main__subtitle.subtitle The history of great design
+									.item-newsroom-main__date August 12, 2021
+							a.newsroom-main__item.item-newsroom-main(href="404.html")
+								.item-newsroom-main__image-ibg
+									img.item-newsroom-main__picture(src="@img/newsroom/3.jpg", alt="Картинка")
+								.item-newsroom-main__content 
+									.item-newsroom-main__title Company news
+									.item-newsroom-main__subtitle.subtitle Designers who changed everything
+									.item-newsroom-main__date August 12, 2021
+						a.newsroom-main__all._icon-arrow-forward(href="404.html") Newsroom
+				section.main__reviews.reviews-main
+					.reviews-main__container._container 
+						h2.reviews-main__title Testimonials
+						.reviews-main__subtitle.subtitle What our customers say.
+						.reviews-main__slider
+							.reviews-main__swiper
+								.reviews-main__slide.slide-reviews-main
+									.reviews-main__content
+										.slide-reviews-main__rating.rating.rating_set
+											.rating__body(data-swiper-parallax="-10")
+												.rating__active
+												.rating__items
+													input.rating__item(type="radio", value="1", name="rating")
+													input.rating__item(type="radio", value="2", name="rating")
+													input.rating__item(type="radio", value="3", name="rating")
+													input.rating__item(type="radio", value="4", name="rating")
+													input.rating__item(type="radio", value="5", name="rating")
+											.rating__value 5
+										.slide-reviews-main__subtitle.subtitle(data-swiper-parallax="-20")  We found the perfect home!
+										.slide-reviews-main__text(data-swiper-parallax="-20") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+										.slide-reviews-main__person(data-swiper-parallax="-10") Nate Davidsson 
+								.reviews-main__slide.slide-reviews-main
+									.reviews-main__content
+										.slide-reviews-main__rating.rating.rating_set
+											.rating__body(data-swiper-parallax="-10")
+												.rating__active
+												.rating__items
+													input.rating__item(type="radio", value="1", name="rating")
+													input.rating__item(type="radio", value="2", name="rating")
+													input.rating__item(type="radio", value="3", name="rating")
+													input.rating__item(type="radio", value="4", name="rating")
+													input.rating__item(type="radio", value="5", name="rating")
+											.rating__value 4
+										.slide-reviews-main__subtitle.subtitle(data-swiper-parallax="-20") We're so happy with Estate.
+										.slide-reviews-main__text(data-swiper-parallax="-20") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+										.slide-reviews-main__person(data-swiper-parallax="-10") Laura Paulie
+								.reviews-main__slide.slide-reviews-main
+									.reviews-main__content
+										.slide-reviews-main__rating.rating.rating_set
+											.rating__body
+												.rating__active
+												.rating__items(data-swiper-parallax="-10")
+													input.rating__item(type="radio", value="1", name="rating")
+													input.rating__item(type="radio", value="2", name="rating")
+													input.rating__item(type="radio", value="3", name="rating")
+													input.rating__item(type="radio", value="4", name="rating")
+													input.rating__item(type="radio", value="5", name="rating")
+											.rating__value 3.6
+										.slide-reviews-main__subtitle.subtitle(data-swiper-parallax="-20") Thank you for our beautiful home.
+										.slide-reviews-main__text(data-swiper-parallax="-20") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+										.slide-reviews-main__person(data-swiper-parallax="-10") Greg Todd
+								.reviews-main__slide.slide-reviews-main
+									.reviews-main__content
+										.slide-reviews-main__rating.rating.rating_set
+											.rating__body(data-swiper-parallax="-10")
+												.rating__active
+												.rating__items
+													input.rating__item(type="radio", value="1", name="rating")
+													input.rating__item(type="radio", value="2", name="rating")
+													input.rating__item(type="radio", value="3", name="rating")
+													input.rating__item(type="radio", value="4", name="rating")
+													input.rating__item(type="radio", value="5", name="rating")
+											.rating__value 5
+										.slide-reviews-main__subtitle.subtitle(data-swiper-parallax="-20") We found the perfect home!
+										.slide-reviews-main__text(data-swiper-parallax="-20") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+										.slide-reviews-main__person(data-swiper-parallax="-10") Nate Davidsson 
+						.reviews-main__navigation
+							.reviews-main__prev.swiper-button-prev
+							.reviews-main__next.swiper-button-next
+				section.main__contacts.contacts-main 
+					.contacts-main__container._container 
+						.contacts-main__title Seen enough?
+						.contacts-main__subtitle.subtitle Get in touch with us today.
+						.contacts-main__text Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.
+						.contacts-main__buttons 
+							a.contacts-main__button(href="404.html") Contact
+							a.contacts-main__button(href="404.html") See listings
+			include html/js
+			include html/footer
+
+
+
